@@ -59,7 +59,10 @@ class CexAPI(object):
 
   def cancel_order(self, order_id):
     return self.api_call('cancel_order', {"id": order_id}, 1)
-
+  
+  def cancel_orders(self, couple=''):
+    return self.api_call('cancel_orders',{},1, couple)
+  
   def place_order(self, ptype='buy', amount=0, price=0, couple=''):
     return self.api_call('place_order', {"type": ptype, "amount": str(amount), "price": str(price)}, 1,  couple)
 
